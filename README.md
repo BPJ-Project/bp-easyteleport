@@ -7,7 +7,7 @@ Features
 
 - Mythic Notify, pNotify, QBCore and Standalone Notification systems supported
 - Configurable On or Off Notifications
-- Optimised 0.00 idle - 0.03-0.04 when in use.
+- Optimised 0.00 idle - 0.05-0.07 when in use.
 - Easy, Tidy Config
 
 Ped Preview: https://streamable.com/nv0kpk
