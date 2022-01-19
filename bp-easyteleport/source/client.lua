@@ -3,7 +3,6 @@ CreateThread(function()
             Wait(5)
 
             local isNearEntrance, entranceInfo = fetchNearestTeleportToPed()
-            local txt = "You Entered " ..entranceInfo.name
 
             if isNearEntrance <= 4.5 then
                 if isNearEntrance <= 1.2 then
@@ -11,13 +10,13 @@ CreateThread(function()
                     if IsControlJustPressed(0, 38) then
                         TeleportAsPed(entranceInfo.exit.x, entranceInfo.exit.y, entranceInfo.exit.z, entranceInfo.exit.heading)
                         if Config.NotificationSystem == "mythic_notify" and Config.EnableNotifications then
-                        exports['mythic_notify']:DoHudText('inform', txt)
+                        exports['mythic_notify']:DoHudText('inform', "You Entered " ..entranceInfo.name)
                         elseif Config.NotificationSystem == "pNotify" and Config.EnableNotifications then
-                        TriggerEvent("pNotify:SendNotification", {text = txt})
+                        TriggerEvent("pNotify:SendNotification", {text = "You Entered " ..entranceInfo.name})
                         elseif Config.NotificationSystem == "QBCore" and Config.EnableNotifications then
-                        TriggerEvent('QBCore:Notify', txt)
+                        TriggerEvent('QBCore:Notify', "You Entered " ..entranceInfo.name)
                         elseif Config.NotificationSystem == "Standalone" and Config.EnableNotifications then
-                        ShowNotification(txt)
+                        ShowNotification("You Entered " ..entranceInfo.name)
                         end
                     end
                 end
@@ -32,7 +31,6 @@ CreateThread(function()
             Wait(5)
 
             local isNearExit, exitInfo = fetchNearestExitToPed()
-            local txt = "You Exited " ..exitInfo.name
 
             if isNearExit <= 4.5 then
                 if isNearExit <= 1.2 then
@@ -40,13 +38,13 @@ CreateThread(function()
                     if IsControlJustPressed(0, 38) then
                         TeleportAsPed(exitInfo.entrance.x, exitInfo.entrance.y, exitInfo.entrance.z, exitInfo.entrance.heading)
                         if Config.NotificationSystem == "mythic_notify" and Config.EnableNotifications then
-                        exports['mythic_notify']:DoHudText('inform', txt)
+                        exports['mythic_notify']:DoHudText('inform', "You Exited " ..exitInfo.name)
                         elseif Config.NotificationSystem == "pNotify" and Config.EnableNotifications then
-                        TriggerEvent("pNotify:SendNotification", {text = txt})
+                        TriggerEvent("pNotify:SendNotification", {text = "You Exited " ..exitInfo.name})
                         elseif Config.NotificationSystem == "QBCore" and Config.EnableNotifications then
-                        TriggerEvent('QBCore:Notify', txt)
+                        TriggerEvent('QBCore:Notify', "You Exited " ..exitInfo.name)
                         elseif Config.NotificationSystem == "Standalone" and Config.EnableNotifications then
-                        ShowNotification(txt)
+                        ShowNotification("You Exited " ..exitInfo.name)
                         end
                     end
                 end
@@ -61,7 +59,6 @@ CreateThread(function()
             Wait(5)
 
             local isNearEntrance, entranceInfo = fetchNearestVehicleEntrance()
-            local txt = "You Entered " ..entranceInfo.name
 
             if isNearEntrance <= 4.5 and IsPedInAnyVehicle(PlayerPedId(), false) then
                 if isNearEntrance <= 2.0 then
@@ -69,13 +66,13 @@ CreateThread(function()
                     if IsControlJustPressed(0, 38) then
                         TeleportWithVehicle(entranceInfo.exit.x, entranceInfo.exit.y, entranceInfo.exit.z, entranceInfo.exit.heading)
                         if Config.NotificationSystem == "mythic_notify" and Config.EnableNotifications then
-                        exports['mythic_notify']:DoHudText('inform', txt)
+                        exports['mythic_notify']:DoHudText('inform', "You Entered " ..entranceInfo.name)
                         elseif Config.NotificationSystem == "pNotify" and Config.EnableNotifications then
-                        TriggerEvent("pNotify:SendNotification", {text = txt})
+                        TriggerEvent("pNotify:SendNotification", {text = "You Entered " ..entranceInfo.name})
                         elseif Config.NotificationSystem == "QBCore" and Config.EnableNotifications then
-                        TriggerEvent('QBCore:Notify', txt)
+                        TriggerEvent('QBCore:Notify', "You Entered " ..entranceInfo.name)
                         elseif Config.NotificationSystem == "Standalone" and Config.EnableNotifications then
-                        ShowNotification(txt)
+                        ShowNotification("You Entered " ..entranceInfo.name)
                         end
                     end
                 end
@@ -91,7 +88,6 @@ CreateThread(function()
             Wait(5)
 
             local isNearExit, exitInfo = fetchNearestVehicleExit()
-            local txt = "You Exited " ..exitInfo.name
 
             if isNearExit <= 4.5 and IsPedInAnyVehicle(PlayerPedId(), false) then
                 if isNearExit <= 2.0 then
@@ -99,13 +95,13 @@ CreateThread(function()
                     if IsControlJustPressed(0, 38) then
                         TeleportWithVehicle(exitInfo.entrance.x, exitInfo.entrance.y, exitInfo.entrance.z, exitInfo.entrance.heading)
                         if Config.NotificationSystem == "mythic_notify" and Config.EnableNotifications then
-                        exports['mythic_notify']:DoHudText('inform', txt)
+                        exports['mythic_notify']:DoHudText('inform', "You Exited " ..exitInfo.name)
                         elseif Config.NotificationSystem == "pNotify" and Config.EnableNotifications then
-                        TriggerEvent("pNotify:SendNotification", {text = txt})
+                        TriggerEvent("pNotify:SendNotification", {text = "You Exited " ..exitInfo.name})
                         elseif Config.NotificationSystem == "QBCore" and Config.EnableNotifications then
-                        TriggerEvent('QBCore:Notify', txt)
+                        TriggerEvent('QBCore:Notify', "You Exited " ..exitInfo.name)
                         elseif Config.NotificationSystem == "Standalone" and Config.EnableNotifications then
-                        ShowNotification(txt)
+                        ShowNotification("You Exited " ..exitInfo.name)
                         end
                     end
                 end
